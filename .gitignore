@@ -1,0 +1,28 @@
+### Local environment ###
+.env
+
+### Nuxt ###
+.nuxt/
+.output/
+coverage/
+dist/
+
+### ESLint ###
+.eslintcache
+
+### Node.js ###
+node_modules/
+
+### IntelliJ IDEA ###
+.idea/*
+!.idea/copyright/
+!.idea/inspectionProfiles/
+!.idea/runConfigurations/
+*.iml
+
+### AI ###
+.cursor/
+.claude/
+
+### OS ###
+.DS_Store

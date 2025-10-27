@@ -1,0 +1,31 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+
+    ":automergePr",
+    ":automergePatch",
+    ":automergeLinters",
+    ":automergeTesters",
+    ":automergeTypes",
+    ":automergeRequireAllStatusChecks",
+    ":combinePatchMinorReleases",
+    ":disableDependencyDashboard",
+    ":enableVulnerabilityAlertsWithLabel(security)",
+    ":gitSignOff",
+    ":label(dependencies)",
+    ":maintainLockFilesWeekly",
+    ":pinDependencies",
+    ":pinDevDependencies",
+    ":pinSkipCi",
+    ":prConcurrentLimitNone",
+    ":prImmediately",
+    ":rebaseStalePrs",
+    ":semanticPrefixChore"
+  ],
+  "branchPrefix": "chore-deps/",
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true
+  }
+}
