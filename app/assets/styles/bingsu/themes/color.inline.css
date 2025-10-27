@@ -11,6 +11,7 @@
   /* 의미론적 색상 */
   --color-background: var(--color-secondary-25);
   --color-foreground: var(--color-gray-700);
+  --color-heading: var(--color-secondary-950);
   --color-placeholder: --alpha(var(--color-foreground) / 50%);
 
   --color-surface-1: var(--color-secondary-50);
