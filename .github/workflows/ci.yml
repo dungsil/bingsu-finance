@@ -47,6 +47,7 @@ jobs:
           name: bingsu-${{ github.sha }}
           path: ./.output/
           retention-days: 7
+          include-hidden-files: true
   sast:
     name: 정적 분석
     runs-on: ubuntu-latest
