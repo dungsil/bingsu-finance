@@ -12,7 +12,7 @@
   --color-background: var(--color-secondary-25);
   --color-foreground: var(--color-gray-700);
   --color-heading: var(--color-secondary-950);
-  --color-placeholder: --alpha(var(--color-foreground) / 50%);
+  --color-placeholder: color-mix(in srgb, var(--color-foreground) 50%, transparent);
 
   --color-surface-1: var(--color-secondary-50);
 }
