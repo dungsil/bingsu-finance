@@ -36,11 +36,21 @@ export default defineNuxtConfig({
     },
   },
 
+  css: ['assets/styles/tailwind.css'],
+
   imports: {
     dirs: ['#shared/**'],
+    imports: [
+      { from: 'tailwind-variants', name: 'tv' },
+      { from: 'tailwind-variants', name: 'VariantProps', type: true },
+    ],
   },
 
   reka: {
     prefix: 'Reka',
+  },
+
+  vite: {
+    plugins: [tailwindcss()],
   },
 })
