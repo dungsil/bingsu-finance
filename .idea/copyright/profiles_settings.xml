@@ -1,5 +1,5 @@
 <component name="CopyrightManager">
-  <settings default="bingsu">
+  <settings>
     <LanguageOptions name="JavaScript">
       <option name="lenBefore" value="1" />
     </LanguageOptions>
