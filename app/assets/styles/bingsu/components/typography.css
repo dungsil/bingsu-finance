@@ -1,0 +1,27 @@
+body {
+  @apply text-md;
+}
+
+h1 {
+  @apply text-heading-xl;
+}
+
+h2 {
+  @apply text-heading-lg;
+}
+
+h3 {
+  @apply text-heading-md;
+}
+
+h4 {
+  @apply text-heading-sm;
+}
+
+h5 {
+  @apply text-heading-xs;
+}
+
+h6 {
+  @apply text-heading-xxs;
+}

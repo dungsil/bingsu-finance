@@ -1,0 +1,94 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+  border-width: 0;
+  border-style: solid;
+  border-color: var(--color-secondary);
+
+  background-origin: border-box;
+  background-repeat: no-repeat;
+}
+
+:root {
+  background-color: var(--color-background);
+  block-size: 100%;
+  overflow: hidden;
+  line-height: 1.5;
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  font-feature-settings: var(--font-sans--font-feature-settings);
+}
+
+:focus-visible {
+  outline: var(--color-primary) dashed 2px;
+  outline-offset: 2px;
+}
+
+:target {
+  scroll-margin-block: 5ex;
+}
+
+::placeholder {
+  color: var(--color-placeholder);
+}
+
+body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+body {
+  min-block-size: 100%;
+  line-height: inherit;
+}
+
+h1, h2, h3, h4, button, input, label {
+  line-height: 1.1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading);
+}
+
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+input[type='date'] {
+  -moz-appearance: textfield;
+}
