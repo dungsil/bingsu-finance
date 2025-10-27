@@ -1,0 +1,4 @@
+@utility text-* {
+  /* https://github.com/tailwindlabs/tailwindcss/discussions/19214 */
+  color: --value(--text-* --color, [color]);
+}

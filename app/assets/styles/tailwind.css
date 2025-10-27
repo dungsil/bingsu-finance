@@ -9,3 +9,4 @@
 @import './bingsu/themes.css';
 @import './bingsu/base.css' layer(base);
 @import './bingsu/components.css' layer(components);
+@import './bingsu/utilities.css';
