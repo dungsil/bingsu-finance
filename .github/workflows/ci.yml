@@ -2,14 +2,14 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
     paths-ignore:
       - '**/*.md'
       - '**/.git*'
       - '**/*ignore'
       - '**/*rc.json'
   pull_request:
-    types: [ opened, synchronize, reopened, closed ]
+    types: [opened, synchronize, reopened, closed]
     paths-ignore:
       - '**/*.md'
       - '**/.git*'
@@ -19,7 +19,6 @@ on:
 concurrency:
   group: ${{ github.workflow }}-${{ github.sha }}
   cancel-in-progress: true
-
 
 jobs:
   build:
@@ -35,7 +34,7 @@ jobs:
       - name: Node.js 설치
         uses: actions/setup-node@v5
         with:
-          node-version-file: ".node-version"
+          node-version-file: .node-version
           cache: pnpm
       - name: 의존성 설치
         run: pnpm install --frozen-lockfile
@@ -51,7 +50,7 @@ jobs:
   sast:
     name: 정적 분석
     runs-on: ubuntu-latest
-    needs: [ build ]
+    needs: [build]
     permissions:
       security-events: write
     steps:
@@ -71,4 +70,4 @@ jobs:
       - name: CodeQL 분석 실행
         uses: github/codeql-action/analyze@v3
         with:
-          category: "/language:typescript"
+          category: '/language:typescript'

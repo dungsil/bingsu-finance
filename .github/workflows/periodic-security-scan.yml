@@ -2,7 +2,7 @@ name: 정기 보안 검사
 
 on:
   schedule:
-    - cron: '0 0 * * 1'  # 매주 월요일 자정에 실행
+    - cron: '0 0 * * 1' # 매주 월요일 자정에 실행
 
 jobs:
   sast:
@@ -22,4 +22,4 @@ jobs:
       - name: CodeQL 분석 실행
         uses: github/codeql-action/analyze@v3
         with:
-          category: "/language:typescript"
+          category: '/language:typescript'
