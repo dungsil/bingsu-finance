@@ -1,3 +1,4 @@
+import tailwindcss from '@tailwindcss/vite'
 import { APP_ID } from './shared/constants'
 
 // https://nuxt.com/docs/4.x/api/nuxt-config
@@ -12,11 +13,21 @@ export default defineNuxtConfig({
     },
   },
 
+  css: ['assets/styles/tailwind.css'],
+
   imports: {
     dirs: ['#shared/**'],
+    imports: [
+      { from: 'tailwind-variants', name: 'tv' },
+      { from: 'tailwind-variants', name: 'VariantProps', type: true },
+    ],
   },
 
   reka: {
     prefix: 'Reka',
+  },
+
+  vite: {
+    plugins: [tailwindcss()],
   },
 })

@@ -1,0 +1,18 @@
+@theme inline {
+  /* 브랜드 색상 */
+  --color-primary: var(--color-primary-600);
+  --color-primary-hover: var(--color-primary-500);
+  --color-primary-foreground: var(--color-primary-50);
+
+  --color-secondary: var(--color-secondary-500);
+  --color-secondary-hover: var(--color-secondary-600);
+  --color-secondary-foreground: var(--color-secondary-950);
+
+  /* 의미론적 색상 */
+  --color-background: var(--color-secondary-25);
+  --color-foreground: var(--color-gray-700);
+  --color-heading: var(--color-secondary-950);
+  --color-placeholder: color-mix(in srgb, var(--color-foreground) 50%, transparent);
+
+  --color-surface-1: var(--color-secondary-50);
+}

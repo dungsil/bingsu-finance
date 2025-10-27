@@ -1,0 +1,11 @@
+@layer theme, base, components, utilities;
+
+/* TailwindCSS */
+@import 'tailwindcss/theme.css' layer(theme);
+/*@import 'tailwindcss/preflight.css' layer(base);*/
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+/* 빙수 */
+@import './bingsu/themes.css';
+@import './bingsu/base.css' layer(base);
+@import './bingsu/components.css' layer(components);
