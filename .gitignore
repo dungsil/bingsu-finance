@@ -6,6 +6,7 @@
 .output/
 coverage/
 dist/
+server/assets/_locales/
 
 ### ESLint ###
 .eslintcache
