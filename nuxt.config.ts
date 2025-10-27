@@ -1,5 +1,9 @@
+import process from 'node:process'
 import tailwindcss from '@tailwindcss/vite'
 import { APP_ID } from './shared/constants'
+
+const isProd = process.env.NODE_ENV === 'production'
+const isDev = !isProd
 
 // https://nuxt.com/docs/4.x/api/nuxt-config
 export default defineNuxtConfig({
@@ -29,5 +33,9 @@ export default defineNuxtConfig({
 
   vite: {
     plugins: [tailwindcss()],
+
+    build: {
+      sourcemap: isDev,
+    },
   },
 })
