@@ -22,6 +22,7 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
+import tailwindcss from '@tailwindcss/vite'
 import { APP_ID } from './shared/constants'
 
 // https://nuxt.com/docs/4.x/api/nuxt-config
