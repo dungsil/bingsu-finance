@@ -13,6 +13,7 @@ export default defineNuxtConfig({
   app: {
     rootAttrs: {
       id: APP_ID,
+      class: 'isolate absolute inset-0',
     },
   },
 
