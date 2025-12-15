@@ -44,7 +44,7 @@
     "eslint": "9.38.0",
     "happy-dom": "20.0.8",
     "npm-run-all2": "8.0.4",
-    "nuxt": "4.2.1",
+    "nuxt": "4.2.2",
     "nuxt-i18n-micro": "1.102.0",
     "playwright-core": "1.56.1",
     "reka-ui": "2.6.0",

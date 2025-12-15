@@ -8,7 +8,7 @@ const isDev = process.env.NODE_ENV !== 'production'
 // https://nuxt.com/docs/4.x/api/nuxt-config
 export default defineNuxtConfig({
   telemetry: false,
-  compatibilityDate: '2025-10-01',
+  compatibilityDate: '2025-12-01',
   modules: ['@nuxt/test-utils/module', 'nuxt-i18n-micro', 'reka-ui/nuxt'],
 
   app: {
