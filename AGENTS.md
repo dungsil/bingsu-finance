@@ -17,6 +17,15 @@ pnpm app:build        # Build for production
 pnpm app:preview      # Preview production build
 ```
 
+### Database
+
+```
+pnpm db:dev           # Open drizzle-kit studio
+pnpm db:gen           # Generate migration files from schema changes
+pnpm db:push          # Push the latest schema to the database (no migrations)
+pnpm db:mig           # Apply generated migrations
+```
+
 ### Testing
 
 ```bash
@@ -45,6 +54,11 @@ pnpm lintfix          # Auto-fix ESLint issues
 pnpm build            # Full production build (runs app:build)
 ```
 
+## Environment
+
+- Copy `.env.sample` to `.env`. `BINGSU_DB_URL` is required for database access and defaults to `file:./.bingsu.db` (SQLite file in the project root).
+- Nitro runtime config uses the `BINGSU_` prefix; `runtimeConfig.db.url` is read by the database client.
+
 ## Architecture
 
 ### Directory Structure
@@ -54,7 +68,11 @@ pnpm build            # Full production build (runs app:build)
     - `layouts/` - Layout wrappers (file-based, auto-applied by routing)
     - `pages/` - File-based routing pages
     - `app.vue` - Root component entry point
+- `db/` - Database schema and migrations (Drizzle ORM)
+    - `schema/` - Table definitions (re-exported via `db/schema.ts` and aliased as `#db`)
+    - `migrations/` - Generated migration files
 - `shared/` - Shared utilities and constants (auto-imported via `#shared/**` alias)
+- `server/utils/useDatabase.ts` - Singleton Drizzle client initialized from runtime config
 - `test/` - Test suite
     - `unit/` - Unit tests (node environment)
     - `e2e/` - Component/integration tests (nuxt environment)
@@ -101,8 +119,9 @@ When writing tests:
 - Telemetry disabled
 - Root element ID: "bingsu" (from `APP_ID` constant)
 - Modules: `@nuxt/test-utils/module`, `reka-ui/nuxt`
-- Auto-imports from `#shared/**` directory
+- Auto-imports from `#shared/**` and database schema via `#db` alias
 - Reka UI prefix: "Reka"
+- Runtime config prefix: `BINGSU_` (e.g., `BINGSU_DB_URL` for the Drizzle client)
 
 #### vitest.config.ts
 
