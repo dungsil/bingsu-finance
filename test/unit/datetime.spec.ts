@@ -1,7 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-
-import { now, nowAfter } from '../../shared/datetime'
-import { nowAfterMinutes } from '../../shared/datetime'
+import { now, nowAfter, nowAfterMinutes } from '../../shared/datetime'
 
 describe('datetime helpers', () => {
   const initialDate = new Date('2024-01-01T00:00:00.000Z')
