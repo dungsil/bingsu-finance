@@ -149,3 +149,4 @@ For framework/library-specific guidance:
 
 - Nuxt: https://nuxt.com/llms.txt
 - Reka UI: https://reka-ui.com/llms.txt
+- Drizzle ORM: https://orm.drizzle.team/llms.txt

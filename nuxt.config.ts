@@ -1,4 +1,5 @@
 import process from 'node:process'
+import { fileURLToPath } from 'node:url'
 import tailwindcss from '@tailwindcss/vite'
 import { APP_ID, DEFAULT_LOCALE_CODE } from './shared/constants'
 
@@ -17,10 +18,24 @@ export default defineNuxtConfig({
     },
   },
 
+  runtimeConfig: {
+    nitro: {
+      envPrefix: 'BINGSU_',
+    },
+
+    db: {
+      url: '',
+    },
+  },
+
   css: ['assets/styles/tailwind.css'],
 
+  alias: {
+    '#db': fileURLToPath(new URL('./db', import.meta.url)),
+  },
+
   imports: {
-    dirs: ['#shared/**'],
+    dirs: ['#shared/**', '#db/schema.ts'],
     imports: [
       { from: 'tailwind-variants', name: 'tv' },
       { from: 'tailwind-variants', name: 'VariantProps', type: true },
