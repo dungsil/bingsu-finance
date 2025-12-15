@@ -22,7 +22,7 @@ export default defineConfig({
         test: {
           name: 'nuxt',
           environment: 'nuxt',
-          include: ['test/e2e/**/*.{test,spec}.ts'],
+          include: ['test/nuxt/**/*.{test,spec}.ts'],
         },
       }),
     ],
