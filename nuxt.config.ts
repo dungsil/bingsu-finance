@@ -61,8 +61,21 @@ export default defineNuxtConfig({
   },
 
   nitro: {
+    experimental: {
+      openAPI: true,
+    },
+
     imports: {
       dirs: ['#shared/'],
+    },
+
+    openAPI: {
+      production: 'prerender',
+      meta: {
+        title: 'Bingsu finance',
+        description: '빙수',
+        version: '0.0.1',
+      },
     },
   },
 

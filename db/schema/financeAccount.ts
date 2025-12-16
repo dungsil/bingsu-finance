@@ -9,28 +9,28 @@ export const financeAccount = sqliteTable('bingsu_finance_account', {
   parent: int('parent_id').references(() => financeAccount.id),
   user: int('user_id').notNull().references(() => user.id),
 
-  /** 계정 형식 */
+  /**  형식 */
   type: text('type', { enum: FINANCE_ACCOUNT_TYPES }).$type<FinanceAccountType>().notNull(),
 
-  /* 계정 명 */
+  /* 계좌 명 */
   name: text('name').notNull(),
 
-  /** 계정에 추가 메모 */
+  /** 계좌에 추가 메모 */
   memo: text('memo').notNull().default(''),
 
-  /** 계정의 기본 화폐 */
+  /** 계좌의 기본 화폐 */
   defaultCurrency: text('default_currency').notNull(),
 
-  /** 계정의 최초 보유 금액 (기본 화폐 단위) */
+  /** 계좌의 최초 보유 금액 (기본 화폐 단위) */
   initialBalance: real('initial_balance').notNull().default(0),
 
-  /** 계정의 표시 순서 */
+  /** 계좌의 표시 순서 */
   displayOrder: int('order').notNull().default(0),
 
-  /** 계정의 활성화 시작 시기 */
+  /** 계좌의 활성화 시작 시기 */
   activeFrom: text('active_from'),
 
-  /** 계정의 활성화 만료 시기 */
+  /** 계좌의 활성화 만료 시기 */
   activeUntil: text('active_until'),
 
   /** 생성일시 */
