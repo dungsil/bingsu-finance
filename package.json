@@ -43,6 +43,7 @@
     "drizzle-kit": "0.31.8",
     "eslint": "9.38.0",
     "happy-dom": "20.0.8",
+    "nanoid": "5.1.6",
     "npm-run-all2": "8.0.4",
     "nuxt": "4.2.2",
     "nuxt-i18n-micro": "1.102.0",

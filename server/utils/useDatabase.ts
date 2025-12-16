@@ -8,7 +8,7 @@ export type Databse = typeof schema
 let instance: LibSQLDatabase<Databse> | null = null
 
 /**
- * drizzle 클라이언트를 리턴한다.
+ * drizzle 클라이언트 인스턴스를 반환한다.
  */
 export function useDatabase(): LibSQLDatabase<Databse> {
   if (instance === null) {
