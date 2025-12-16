@@ -35,7 +35,7 @@ export default defineNuxtConfig({
   },
 
   imports: {
-    dirs: ['#shared/**', '#db/schema.ts'],
+    dirs: ['./shared/**'],
     imports: [
       { from: 'tailwind-variants', name: 'tv' },
       { from: 'tailwind-variants', name: 'VariantProps', type: true },
@@ -58,6 +58,12 @@ export default defineNuxtConfig({
 
   reka: {
     prefix: 'Reka',
+  },
+
+  nitro: {
+    imports: {
+      dirs: ['./shared/**'],
+    },
   },
 
   vite: {
