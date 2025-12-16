@@ -3,7 +3,10 @@ import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   test: {
+    silent: true,
+
     coverage: {
+      provider: 'v8',
       reportOnFailure: true,
       reporter: ['text', 'json-summary', 'json'],
       include: ['./app/**/*.{ts,vue}', './server/**/*.ts', './shared/**/*.ts'],
@@ -26,5 +29,11 @@ export default defineConfig({
         },
       }),
     ],
+
+    environmentOptions: {
+      nuxt: {
+        mock: {},
+      },
+    },
   },
 })
