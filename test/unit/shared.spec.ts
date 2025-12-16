@@ -1,6 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { now, nowAfter, nowAfterMinutes } from '../../shared/datetime'
-import { sha256 } from '../../shared/hash'
 
 describe('shared', () => {
   describe('datetime', () => {
