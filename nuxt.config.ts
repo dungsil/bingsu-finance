@@ -35,7 +35,7 @@ export default defineNuxtConfig({
   },
 
   imports: {
-    dirs: ['./shared/**'],
+    dirs: ['#shared/'],
     imports: [
       { from: 'tailwind-variants', name: 'tv' },
       { from: 'tailwind-variants', name: 'VariantProps', type: true },
@@ -62,7 +62,7 @@ export default defineNuxtConfig({
 
   nitro: {
     imports: {
-      dirs: ['./shared/**'],
+      dirs: ['#shared/'],
     },
   },
 
