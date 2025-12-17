@@ -28,6 +28,14 @@ export default defineConfig({
           include: ['test/nuxt/**/*.{test,spec}.ts'],
         },
       }),
+
+      await defineVitestProject({
+        test: {
+          name: 'e2e',
+          environment: 'nuxt',
+          include: ['test/e2e/**/*.{test,spec}.ts'],
+        },
+      }),
     ],
 
     environmentOptions: {

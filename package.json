@@ -7,6 +7,7 @@
   "repository": "git+https://github.com/dungsil/bingsu-finance.git",
   "scripts": {
     "postinstall": "nuxi prepare",
+    "dev": "run-p -s *:dev",
     "app:dev": "nuxi dev",
     "app:build": "nuxi build",
     "app:preview": "nuxi preview",
@@ -18,6 +19,7 @@
     "lint:code": "eslint --cache",
     "lint": "run-p -s lint:*",
     "lintfix": "eslint --fix --cache",
+    "test:dev": "vitest",
     "test:unit": "vitest --run --project unit",
     "test:unit:coverage": "vitest --run --project unit --coverage.enabled true",
     "test:nuxt": "vitest --run --project nuxt",
