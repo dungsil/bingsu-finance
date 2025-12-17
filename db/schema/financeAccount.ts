@@ -1,12 +1,12 @@
 import type { FinanceAccountType } from '../../shared/finance'
-import { index, int, real, sqliteTable, text } from 'drizzle-orm/sqlite-core'
+import { foreignKey, index, int, real, sqliteTable, text } from 'drizzle-orm/sqlite-core'
 import { now } from '../../shared/datetime'
 import { FINANCE_ACCOUNT_TYPES } from '../../shared/finance'
 import { user } from './user'
 
 export const financeAccount = sqliteTable('bingsu_finance_account', {
   id: int('id').primaryKey({ autoIncrement: true }),
-  parent: int('parent_id').references(() => financeAccount.id),
+  parent: int('parent_id'),
   user: int('user_id').notNull().references(() => user.id),
 
   /**  형식 */
@@ -39,6 +39,8 @@ export const financeAccount = sqliteTable('bingsu_finance_account', {
   /** 최근수정일시 */
   lastModifiedAt: text('last_modified_at').notNull().$default(() => now()).$onUpdate(() => now()),
 }, r => [
+  foreignKey({ columns: [r.parent], foreignColumns: [r.id] }),
+
   index('bingsu_finance_account__parent--ix').on(r.parent),
   index('bingsu_finance_account__type--ix').on(r.type),
   index('bingsu_finance_account__default_currency').on(r.defaultCurrency),
