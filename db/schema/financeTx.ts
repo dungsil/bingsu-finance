@@ -4,6 +4,8 @@ import { financeAccount } from './financeAccount'
 
 export const financeTx = sqliteTable('bingsu_finance_tx', {
   id: text('id').primaryKey(),
+  // user: int('user_id').notNull().references(() => user.id),
+
   /** 결재일 */
   date: text('transaction_date').notNull(),
 

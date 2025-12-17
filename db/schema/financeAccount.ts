@@ -2,14 +2,13 @@ import type { FinanceAccountType } from '../../shared/finance'
 import { foreignKey, index, int, real, sqliteTable, text } from 'drizzle-orm/sqlite-core'
 import { now } from '../../shared/datetime'
 import { FINANCE_ACCOUNT_TYPES } from '../../shared/finance'
-import { user } from './user'
 
 export const financeAccount = sqliteTable('bingsu_finance_account', {
   id: int('id').primaryKey({ autoIncrement: true }),
+  // user: int('user_id').notNull().references(() => user.id),
   parent: int('parent_id'),
-  user: int('user_id').notNull().references(() => user.id),
 
-  /**  형식 */
+  /** 형식 */
   type: text('type', { enum: FINANCE_ACCOUNT_TYPES }).$type<FinanceAccountType>().notNull(),
 
   /* 계좌 명 */
